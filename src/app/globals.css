@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 0rem;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: transparent;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+}
+
+/* swiper CSS */
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Loader CSS */
+.loader {
+  position: relative;
+  border: 24px solid;
+  border-color: red transparent red transparent;
+  animation: rotate_000 2s linear infinite;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  border: 24px solid transparent;
+  border-left-color: red;
+  position: absolute;
+  left: -24px;
+  top: -24px;
+  animation: prix 1s infinite ease-in;
+  transform-origin: 0% 100%;
+}
+
+.loader:before {
+  border-color: transparent red transparent transparent;
+  transform-origin: 100% 0%;
+  animation-delay: 0.5s;
+}
+
+@keyframes rotate_000 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prix {
+  20%,
+  80% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(-90deg);
+  }
+}
+
+/* Custom Color */
+.main-bg {
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
+}
+
+.main-bg-sec {
+  background: -webkit-linear-gradient(to right, #232526, #414345);
+  background: linear-gradient(to right, #232526, #414345);
+}
+
+.custom-border {
+  border-color: linear-gradient(to right, #232526, #414345);
+}
