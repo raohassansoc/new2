@@ -358,6 +358,7 @@ function MarketTable() {
               {crypto.map((row, index) => {
                 return (
                   <TableRow
+                  key={index}
                     hover
                     sx={{
                       cursor: "pointer",
@@ -376,7 +377,7 @@ function MarketTable() {
                     >
                       <div className="flex">
                         <span className="mr-2">
-                          <Image src={row.logo} width={20} height={20} />
+                          <Image src={row.logo} width={20} height={20} alt="pic" />
                         </span>
                         {row.instrument}
                       </div>
